@@ -1,0 +1,67 @@
+.FormData{
+    overflow: hidden;
+    padding:10px;
+}
+
+.FormRow{
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding:10px;
+    border:#000 1px solid;
+}
+
+.FormRow.approved{
+    border:green 1px solid;
+    background-color:rgba(0, 128, 0, 0.219);
+}
+
+.FormRow.reject{
+    border:red 1px solid;
+    background-color:rgba(255, 0, 0, 0.253);
+}
+
+
+
+.FormRow .FormCol{
+    float: left;
+    width: calc(50% - 300px)
+}
+
+.FormRow .FormAction{
+    float: right;
+    width: 100px
+}
+
+.FormRow .FormMsg{
+    float: left;
+    width: 200px
+}
+
+.FormRow .FormPhoto{
+    float: left;
+    width: 50%
+}
+
+.FormRow ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.FormRow ul li{
+    float: left;
+    width: 20%;
+    padding:0 10px;
+    box-sizing: border-box
+}
+
+.FormRow ul li h4{
+    margin: 0;
+}
+
+.FormRow ul li img{
+    float: left;
+    width: 100%;
+    border: none;
+}

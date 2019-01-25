@@ -1,0 +1,29 @@
+<form autocomplete="off" [formGroup]="DataForm">
+  <div formArrayName="members" class="FormData">
+    <button type="button" (click)="Sort()" class="{{sort_direction == 1 ? 'up':'down'}}">Sort</button>
+    <hr>
+    <div class="FormRow {{Members[i].class}}" *ngFor="let member of membersArray.controls;let i = index" [formGroupName]="i">
+      <div class="FormCol">
+        <div>ID : {{Members[i].id}}</div>
+        <div>Date : {{Members[i].timestamp | date:'medium' }}</div>
+        <div>Landcover : {{Members[i].landobservations[0].landcover}}</div>
+        <div>Landuse : {{Members[i].landobservations[0].landuse}}</div>
+      </div>
+      <div class="FormPhoto">
+        <ul>
+            <li *ngFor="let img of Members[i].photos">
+              <h4>{{img.direction}}</h4>
+              <a [href]="img.url" target="_blank"><img [src]="img.url" /></a>
+            </li>
+          </ul>
+      </div>
+      <div class="FormMsg">
+        <textarea formControlName="comment"></textarea>
+      </div>
+      <div class="FormAction">
+        <button type="button" [disabled]="membersArray.controls[i].invalid" (click)="MakeDecision(i, 1)">Approve</button>
+        <button [disabled]="membersArray.controls[i].invalid" type="button" (click)="MakeDecision(i, 2)">Reject</button>
+      </div>
+    </div>
+  </div>
+</form>
